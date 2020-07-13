@@ -16,7 +16,6 @@ export class ListaDestinosComponent implements OnInit {
   }
   guardar(nombre:string,url:string):boolean{
     this.destinos.push(new destinoViaje(nombre,url));
-    console.log(destinoViaje);
     return false;
   }
   elegido(d : destinoViaje){
