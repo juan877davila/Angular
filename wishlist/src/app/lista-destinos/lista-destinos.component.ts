@@ -20,11 +20,12 @@ export class ListaDestinosComponent implements OnInit {
   agregado(d: DestinoViaje) {
     this.DestinosApiClient.add(d);
     this.onItemAdded.emit(d);
+    return false;
   }
   
-  elegido(d: DestinoViaje) {
+  elegido(e: DestinoViaje) {
     this.DestinosApiClient.getAll().forEach(x=> x.setSelected(false))
-    d.setSelected(true);
+    e.setSelected(true);
   }
 
 }
