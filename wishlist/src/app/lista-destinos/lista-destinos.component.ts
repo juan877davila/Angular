@@ -5,11 +5,12 @@ import { DestinosApiClient } from '../models/destino-api-clinet.model';
 @Component({
   selector: 'app-lista-destinos',
   templateUrl: './lista-destinos.component.html',
-  styleUrls: ['./lista-destinos.component.css']
+  styleUrls: ['./lista-destinos.component.css'],
+  providers: [ DestinosApiClient]
 })
 export class ListaDestinosComponent implements OnInit {
   @Output() onItemAdded: EventEmitter<DestinoViaje>;
-  constructor(private DestinosApiClient) { 
+  constructor(private destinosApiClient:DestinosApiClient) { 
     this.onItemAdded = new EventEmitter();
   }
 
@@ -18,13 +19,13 @@ export class ListaDestinosComponent implements OnInit {
   }
 
   agregado(d: DestinoViaje) {
-    this.DestinosApiClient.add(d);
+    this.destinosApiClient.add(d);
     this.onItemAdded.emit(d);
     return false;
   }
   
   elegido(e: DestinoViaje) {
-    this.DestinosApiClient.getAll().forEach(x=> x.setSelected(false))
+    this.destinosApiClient.getAll().forEach(x=> x.setSelected(false))
     e.setSelected(true);
   }
 

@@ -5,8 +5,9 @@
         <label for="nombre">Nombre</label>
         <input type="text" class="form-control"	id="nombre" placeholder="Ingresar nombre..."
         [formControls]="fg.controls['nombre']">
-        <div *ngIf="!fg.controls['nombre'].valid">nombre invalido</div>
         <div *ngIf="!fg.controls['nombre'].hasError('required')">nombre requerido!</div>
+        <div *ngIf="!fg.controls['nombre'].hasError('invalidNombre')">nombre invalido!</div>
+        <div *ngIf="!fg.controls['nombre'].hasError('minLongNombre')">nombre debe tener al menos {{minLongitud}} de largo!</div>
     </div>
     <div class="form-group">
         <label for="Imagen Url">Imagen Url</label>
