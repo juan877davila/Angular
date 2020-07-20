@@ -17,6 +17,7 @@
         <div>
             <a href="#" (click)="voteUp()"><i class="material-icons md18">thumb_up</i></a>
             <a href="#" (click)="voteDown()"><i class="material-icons md18">thumb_down</i></a>
+            {{destino.votes}}
         </div>
         <a href="#" class="btn-card" (click)="ir()">Ir!</a>
         <span *ngIf="destino.isSelected()">
