@@ -14,20 +14,24 @@ export class DestinoViajeComponent implements OnInit {
   @Input('idx') position:number;
   @HostBinding('attr.class') cssClass='col-md-4';
   @Output() onClicked:EventEmitter<DestinoViaje>;
+
   constructor( private store: Store<AppState>) {
     this.onClicked = new EventEmitter();
   }
 
-  ngOnInit(): void {
+  ngOnInit(){
   }
+
   ir(){
     this.onClicked.emit(this.destino);
     return false;
   }
+
   voteUp(){
     this.store.dispatch( new VoteUpAction(this.destino));
     return false;
   }
+  
   voteDown(){
     this.store.dispatch( new VoteDownAction(this.destino));
     return false;

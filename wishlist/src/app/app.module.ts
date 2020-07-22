@@ -26,6 +26,15 @@ import { VuelosComponentComponent } from './components/vuelos/vuelos-component/v
 import { VuelosMainComponentComponent } from './components/vuelos/vuelos-main-component/vuelos-main-component.component';
 import { VuelosMasInfoComponentComponent } from './components/vuelos/vuelos-mas-info-component/vuelos-mas-info-component.component';
 import { VuelosDetalleComponentComponent } from './components/vuelos/vuelos-detalle-component/vuelos-detalle-component.component';
+import { DestinoViaje } from './models/destino-viaje.model';
+import { ReservasModule } from './reservas/reservas.module';
+
+export const childrenRoutesVuelos: Routes = [
+  { path: '', redirectTo: 'main', pathMatch: 'full' },
+  { path: 'main', component: VuelosMainComponentComponent },
+  { path: 'mas-info', component: VuelosMasInfoComponentComponent },
+  { path: ':id', component: VuelosDetalleComponentComponent },
+];
 
 const routes: Routes = [
   { path: '', redirectTo:'home', pathMatch: 'full' },
@@ -35,6 +44,12 @@ const routes: Routes = [
   { path: 'protected',
     component: ProtectedComponent,
     canActivate: [usuarioLogueadoGuard]
+  },
+  {
+    path: 'vuelos',
+    component: VuelosComponentComponent,
+    canActivate: [ usuarioLogueadoGuard ],
+    children: childrenRoutesVuelos
   }
 ];
 // redux init
@@ -71,7 +86,8 @@ let reducersInitialState={
     RouterModule.forRoot(routes),
     NgRxStoreModule.forRoot(reducers, {initialState: reducersInitialState }),
     EffectsModule.forRoot([ DestinosViajesEffects ]),
-    StoreDevtoolsModule.instrument()
+    StoreDevtoolsModule.instrument(),
+    ReservasModule
   ],
   providers: [
     DestinosApiClient,
@@ -80,4 +96,5 @@ let reducersInitialState={
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
