@@ -14,6 +14,4 @@ export class usuarioLogueadoGuard implements CanActivate {
     console.log('canActivate', isLoggedIn);
     return isLoggedIn;
   }
-  
-  
 }

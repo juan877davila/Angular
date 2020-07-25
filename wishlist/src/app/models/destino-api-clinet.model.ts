@@ -1,8 +1,8 @@
+import { Injectable, Inject, forwardRef} from '@angular/core';
 import { DestinoViaje } from './destino-viaje.model';
 import { Store } from '@ngrx/store';
 import { AppState } from '../app.module';
 import { NuevoDestinoAction, ElegidoFavoritoAction } from './destino-viaje-state.model';
-import { Injectable } from '@angular/core';
 
 @Injectable()
 export class DestinosApiClient {

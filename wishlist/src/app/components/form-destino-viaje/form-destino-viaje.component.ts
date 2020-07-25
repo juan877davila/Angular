@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators, FormControl, ValidatorFn } from '@a
 import { fromEvent } from 'rxjs';
 import { map, filter, debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { ajax } from 'rxjs/ajax';
+//import { AppConfig, APP_CONFIG} from 'src/app/app.module';
 
 @Component({
   selector: 'app-form-destino-viaje',
@@ -73,6 +74,6 @@ export class FormDestinoViajeComponent implements OnInit {
         return {'minLongNombre':true};
       }
       return null;
-    }
+    };
   }
 }
