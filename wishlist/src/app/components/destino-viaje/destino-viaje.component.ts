@@ -2,7 +2,7 @@ import { Component, OnInit, Input, HostBinding, Output, EventEmitter } from '@an
 import { DestinoViaje } from '../../models/destino-viaje.model';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../app.module';
-import { VoteUpAction, VoteDownAction } from '../../models/destino-viaje-state.model';
+import { ElegidoFavoritoAction, VoteUpAction, VoteDownAction } from '../../models/destino-viaje-state.model';
 
 @Component({
   selector: 'app-destino-viaje',
@@ -24,6 +24,7 @@ export class DestinoViajeComponent implements OnInit {
 
   ir(){
     this.onClicked.emit(this.destino);
+    this.store.dispatch(new ElegidoFavoritoAction(this.destino));
     return false;
   }
 

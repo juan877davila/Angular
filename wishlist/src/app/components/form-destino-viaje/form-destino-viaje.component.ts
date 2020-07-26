@@ -4,7 +4,7 @@ import { FormGroup, FormBuilder, Validators, FormControl, ValidatorFn } from '@a
 import { fromEvent } from 'rxjs';
 import { map, filter, debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { ajax } from 'rxjs/ajax';
-//import { AppConfig, APP_CONFIG} from 'src/app/app.module';
+import { AppConfig, APP_CONFIG} from 'src/app/app.module';
 
 @Component({
   selector: 'app-form-destino-viaje',
@@ -17,7 +17,7 @@ export class FormDestinoViajeComponent implements OnInit {
   minLongitud = 5;
   searchResults: string[];
 
-  constructor(fb: FormBuilder) {
+  constructor(fb: FormBuilder, @Inject(forwardRef(() => APP_CONFIG)) private config: AppConfig) {
     this.onItemAdded = new EventEmitter();
     this.fg = fb.group({
       nombre: ['',Validators.compose([
@@ -49,7 +49,7 @@ export class FormDestinoViajeComponent implements OnInit {
         filter(text => text.length > 2),
         debounceTime(120),
         distinctUntilChanged(),
-        switchMap((text: string) => ajax('/assets/datos.json'))
+        switchMap((text: string) => ajax(this.config.apiEndpoint + '/city?q=' + text))
       ).subscribe(ajaxResponse => this.searchResults = ajaxResponse.response);
   }
 
@@ -71,7 +71,7 @@ export class FormDestinoViajeComponent implements OnInit {
     return (control: FormControl):{ [key: string]:boolean } | null => {
       const l=control.value.toString().trim().length;
       if (l > 0 && l < minLong){
-        return {'minLongNombre':true};
+        return {minLongNombre:true};
       }
       return null;
     };

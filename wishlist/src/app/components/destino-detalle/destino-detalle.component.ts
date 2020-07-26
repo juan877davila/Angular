@@ -1,4 +1,4 @@
-import { Component, OnInit, InjectionToken, Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DestinosApiClient } from '../../models/destino-api-clinet.model';
 import { DestinoViaje } from '../../models/destino-viaje.model';
 import { ActivatedRoute } from '@angular/router';
@@ -30,7 +30,9 @@ export class DestinoDetalleComponent implements OnInit {
     }]
   };
 
-  constructor(private route: ActivatedRoute, private destinosApiClient: DestinosApiClient) {}
+  constructor(private route: ActivatedRoute, private destinosApiClient: DestinosApiClient) {
+    
+  }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');

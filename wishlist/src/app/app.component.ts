@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,9 @@ export class AppComponent {
     return null;
   });
 
-  destinoAgregado(d) {
-    //alert(d.nombre);
+  constructor(public translate: TranslateService) {
+    console.log('***************** get translation');
+    translate.getTranslation('en').subscribe(x => console.log('x: ' + JSON.stringify(x)));
+    translate.setDefaultLang('es');
   }
 }

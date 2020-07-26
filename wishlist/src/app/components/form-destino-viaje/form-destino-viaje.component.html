@@ -4,15 +4,15 @@
     <div class="form-group">
         <label for="nombre">Nombre</label>
         <input type="text" class="form-control"	id="nombre" placeholder="Ingresar nombre..."
-        [formControls]="fg.controls['nombre']">
+        [formControl]="fg.controls['nombre']">
         <ul>
             <li *ngFor="let r of searchResults;">{{r}}</li>
         </ul>
         <div *ngIf="fg.controls['nombre'].hasError('required')" class="alert alert-danger" role="alert">
-			nombre es obligatorio!
+			Nombre Requerido!
 		</div>
 		<div *ngIf="fg.controls['nombre'].hasError('invalidNombre')" class="alert alert-danger" role="alert">
-			el nombre es invalido!
+			Nombre Invalido!
 		</div>
 		<div *ngIf="fg.controls['nombre'].hasError('minLongNombre')" class="alert alert-danger" role="alert">
 			el nombre debe tener al menos {{ minLongitud }} caracteres!
@@ -21,7 +21,7 @@
     <div class="form-group">
         <label for="Imagen Url">Imagen Url</label>
         <input type="text" class="form-control"	id="imagenUrl" placeholder="Ingresar url..."
-        [formControls]="fg.controls['url']">
+        [formControl]="fg.controls['url']">
     </div>
     <button	type="submit" class="btn btn-primary" *ngIf="fg.valid">Guardar!</button>
 </form>
