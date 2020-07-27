@@ -34,6 +34,7 @@ import { Observable, from } from 'rxjs';
 import { flatMap } from 'rxjs/operators';
 import {NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { EspiameDirective } from './espiame.directive';
 
 // init routing
 export const childrenRoutesVuelos: Routes = [
@@ -175,7 +176,8 @@ function HttpLoaderFactory(http: HttpClient) {
     VuelosComponentComponent,
     VuelosMainComponentComponent,
     VuelosMasInfoComponentComponent,
-    VuelosDetalleComponentComponent
+    VuelosDetalleComponentComponent,
+    EspiameDirective
   ],
   imports: [
     BrowserModule,
