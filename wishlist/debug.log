@@ -1,0 +1,17 @@
+[0728/164425.828:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0728/164428.470:ERROR:file_io_win.cc(161)] CreateFile C:\Users\JUANMA~1\AppData\Local\Temp\karma-8005870\Crashpad\settings.dat: El sistema no puede encontrar el archivo especificado. (0x2)
+[0728/164429.116:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0728/164429.116:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0728/164429.133:ERROR:file_io_win.cc(161)] CreateFile C:\Users\JUANMA~1\AppData\Local\Temp\karma-8005870\Crashpad\settings.dat: El sistema no puede encontrar el archivo especificado. (0x2)
+[0728/164429.134:ERROR:file_io_win.cc(170)] CreateFile C:\Users\JUANMA~1\AppData\Local\Temp\karma-8005870\Crashpad\reports\652c0e52-1f8c-4caf-bcd0-5d4aea97ac6f.dmp: El sistema no puede encontrar la ruta especificada. (0x3)
+[0728/164429.137:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0728/164429.522:ERROR:process_reader_win.cc(151)] SuspendThread: Acceso denegado. (0x5)
+[0728/164429.636:ERROR:file_io_win.cc(161)] CreateFile C:\Users\JUANMA~1\AppData\Local\Temp\karma-8005870\Crashpad\settings.dat: El sistema no puede encontrar el archivo especificado. (0x2)
+[0728/164429.638:ERROR:file_io_win.cc(170)] CreateFile C:\Users\JUANMA~1\AppData\Local\Temp\karma-8005870\Crashpad\reports\2fbb308f-e9ed-4b56-a05b-84b4ee80e0dd.dmp: El sistema no puede encontrar la ruta especificada. (0x3)
+[0728/164429.639:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0728/164430.059:ERROR:file_io_win.cc(161)] CreateFile C:\Users\JUANMA~1\AppData\Local\Temp\karma-8005870\Crashpad\settings.dat: El sistema no puede encontrar el archivo especificado. (0x2)
+[0728/164430.062:ERROR:file_io_win.cc(170)] CreateFile C:\Users\JUANMA~1\AppData\Local\Temp\karma-8005870\Crashpad\reports\99f4b0b0-74da-4510-8a23-5e58f602018b.dmp: El sistema no puede encontrar la ruta especificada. (0x3)
+[0728/164430.063:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0728/164430.698:ERROR:file_io_win.cc(161)] CreateFile C:\Users\JUANMA~1\AppData\Local\Temp\karma-8005870\Crashpad\settings.dat: El sistema no puede encontrar la ruta especificada. (0x3)
+[0728/164430.700:ERROR:file_io_win.cc(170)] CreateFile C:\Users\JUANMA~1\AppData\Local\Temp\karma-8005870\Crashpad\reports\159a1d25-2424-42ab-a6c3-a4d532a5844a.dmp: El sistema no puede encontrar la ruta especificada. (0x3)
+[0728/164430.701:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
