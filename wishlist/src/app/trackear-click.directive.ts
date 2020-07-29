@@ -16,4 +16,5 @@ export class TrackearClickDirective {
     const elemTags = this.element.attributes.getNamedItem('data-trackear-tags').value.split(' ');
     console.log(`||||||||||| track evento: "${elemTags}"`);
   }
+  
 }
